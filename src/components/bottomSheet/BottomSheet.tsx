@@ -1590,7 +1590,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
         /**
          * if index is `-1` than we fire the `onClose` callback.
          */
-        if (_animatedIndex === -1 && _providedOnClose) {
+        if (_animatedIndex === -1 && _providedOnClose && _contentGestureState !== State.UNDETERMINED) {
           runOnJS(print)({
             component: BottomSheet.name,
             method: 'useAnimatedReaction::onClose',
